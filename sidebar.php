@@ -40,7 +40,7 @@ $st_query = new WP_Query($args);
         <?php if ( has_post_thumbnail() ): // サムネイルを持っているときの処理 ?>
     <?php the_post_thumbnail( 'thumb100' ); ?>
 <?php else: // サムネイルを持っていないときの処理 ?>
-    <img src="http://ninkigumi.github.io/family1stlogo150.gif" alt="no image" title="no image" width="100" height="100" />
+    <img src="<?php if (defined('THEMECDN')) { echo THEMECDN; } else { echo get_template_directory_uri(); } ?><?php if (defined('NOIMAGE')) { echo NOIMAGE; } else { echo '/images/no-img.png'; } ?>" alt="no image" title="no image" width="100" height="100" />
         <?php endif; ?>
         </a></span></dt><dd><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
 
