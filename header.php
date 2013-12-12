@@ -45,7 +45,7 @@ strpos($_SERVER['HTTP_USER_AGENT'],'iPhone')!==false ||
 strpos($_SERVER['HTTP_USER_AGENT'],'Windows Phone')!==false ||
 strpos($_SERVER['HTTP_USER_AGENT'],'Android')!==false){
 ?>
-<link rel="apple-touch-icon-precomposed" href="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon-precomposed.png" />
+<link rel="apple-touch-icon-precomposed" href="<?php if (defined('THEMECDN')) { echo THEMECDN; } else { echo get_template_directory_uri(); } ?>/images/apple-touch-icon-precomposed.png" />
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <link rel="stylesheet" href="<?php if (defined('THEMECDN')) { echo THEMECDN; } else { echo get_template_directory_uri(); } ?>/smart.css" type="text/css" media="all" />
 <?php 
