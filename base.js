@@ -4,28 +4,12 @@
 広告のフロート
 -------------------------------*/
 
-<<<<<<< HEAD
-(function($) {
-	$(document).ready(function() {
-=======
 (function(jquery) {
 	jquery(document).ready(function() {
->>>>>>> 20140124-child
 		/*
 		Ads Sidewinder
 		by Hamachiya2. http://d.hatena.ne.jp/Hamachiya2/20120820/adsense_sidewinder
 		*/
-<<<<<<< HEAD
-		var main = $('#main'); // メインカラムのID
-		var side = $('#side'); // サイドバーのID
-		var wrapper = $('#ad1'); // 広告を包む要素のID
-
-　　　　　　　　if (main.length === 0 || side.length === 0 || wrapper.length === 0) {
-return;
-}
-
-		var w = $(window);
-=======
 		var main = jQuery('#main'); // メインカラムのID
 		var side = jQuery('#side'); // サイドバーのID
 		var wrapper = jQuery('#ad1'); // 広告を包む要素のID
@@ -35,7 +19,6 @@ return;
 }
 
 		var w = jquery(window);
->>>>>>> 20140124-child
 		var wrapperHeight = wrapper.outerHeight();
 		var wrapperTop = wrapper.offset().top;
 		var sideLeft = side.offset().left;
@@ -253,24 +236,6 @@ jQuery(function() {
 ｱｺｰﾃﾞｨｵﾝ
 ------------------------------*/
 
-<<<<<<< HEAD
-$(document).ready(function(){
-  //acordion_treeを一旦非表示に
-  $(".acordion_tree").css("display","none");
-  //triggerをクリックすると以下を実行
-  $(".trigger").click(function(){
-    //もしもクリックしたtriggerの直後の.acordion_treeが非表示なら
-    if($("+.acordion_tree",this).css("display")=="none"){
-         //classにactiveを追加
-         $(this).addClass("active");
-         //直後のacordion_treeをスライドダウン
-         $("+.acordion_tree",this).slideDown("normal");
-  }else{
-    //classからactiveを削除
-    $(this).removeClass("active");
-    //クリックしたtriggerの直後の.acordion_treeが表示されていればスライドアップ
-    $("+.acordion_tree",this).slideUp("normal");
-=======
 jQuery(document).ready(function(){
   //acordion_treeを一旦非表示に
   jQuery(".acordion_tree").css("display","none");
@@ -287,7 +252,6 @@ jQuery(document).ready(function(){
     jQuery(this).removeClass("active");
     //クリックしたtriggerの直後の.acordion_treeが表示されていればスライドアップ
     jQuery("+.acordion_tree",this).slideUp("normal");
->>>>>>> 20140124-child
   }
   });
 });
@@ -296,15 +260,6 @@ jQuery(document).ready(function(){
 ドロップダウン
 ------------------------------*/
 
-<<<<<<< HEAD
-$(document).ready(function(){
-    $(".menu ul.children").hide();
-    $("li.page_item").hover(function() {
-        $("ul.children",this).slideDown("slow");
-    },
-    function() {
-        $("ul.children",this).slideUp("slow");
-=======
 jQuery(document).ready(function(){
     jQuery(".menu ul.children").hide();
     jQuery("li.page_item").hover(function() {
@@ -312,6 +267,5 @@ jQuery(document).ready(function(){
     },
     function() {
         jQuery("ul.children",this).slideUp("slow");
->>>>>>> 20140124-child
     });
 });
