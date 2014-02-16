@@ -37,7 +37,6 @@
 <!-- ページトップへ戻る　終わり --> 
 <!-- js切り替え -->
 <?php if(is_mobile()) { ?>
->>>>>>> 20140124-child
 <script type="text/javascript" src="<?php if (defined('THEMECDN')) { echo THEMECDN; } else { echo get_template_directory_uri(); } ?>/smartbase.js"></script>
 <?php 
 }else{
