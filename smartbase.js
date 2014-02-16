@@ -1,11 +1,11 @@
 /*-------------
-�y�[�W�X�N���[��
+ページスクロール
 -----------*/
 
 jQuery(function() {
     var pageTop = jQuery('#page-top');
     pageTop.hide();
-    //�X�N���[����400�ɒB�������\��
+    //スクロールが400に達したら表示
     jQuery(window).scroll(function () {
         if(jQuery(this).scrollTop() > 400) {
             pageTop.fadeIn();
@@ -13,7 +13,7 @@ jQuery(function() {
             pageTop.fadeOut();
         }
     });
-    //�X�N���[�����ăg�b�v
+    //スクロールしてトップ
         pageTop.click(function () {
         jQuery('body,html').animate({
             scrollTop: 0
@@ -23,24 +23,24 @@ jQuery(function() {
   });
 
 /*---------------------------
-����ި��
+アコーディオン
 ------------------------------*/
 
 jQuery(document).ready(function(){
-  //acordion_tree�����U���\����
+  //acordion_treeを一旦非表示に
   jQuery(".acordion_tree").css("display","none");
-  //trigger���N���b�N�����ƈȉ������s
+  //triggerをクリックすると以下を実行
   jQuery(".trigger").click(function(){
-    //�������N���b�N����trigger�̒�����.acordion_tree�����\���Ȃ�
+    //もしもクリックしたtriggerの直後の.acordion_treeが非表示なら
     if(jQuery("+.acordion_tree",this).css("display")=="none"){
-         //class��active���ǉ�
+         //classにactiveを追加
          jQuery(this).addClass("active");
-         //������acordion_tree���X���C�h�_�E��
+         //直後のacordion_treeをスライドダウン
          jQuery("+.acordion_tree",this).slideDown("normal");
   }else{
-    //class����active���폜
+    //classからactiveを削除
     jQuery(this).removeClass("active");
-    //�N���b�N����trigger�̒�����.acordion_tree���\�������Ă����΃X���C�h�A�b�v
+    //クリックしたtriggerの直後の.acordion_treeが表示されていればスライドアップ
     jQuery("+.acordion_tree",this).slideUp("normal");
   }
   });
