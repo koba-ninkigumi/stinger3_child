@@ -12,12 +12,9 @@ img {
 	border: none;
 	vertical-align: bottom;
 }
-<<<<<<< HEAD
-=======
 .acordion_tree {
 	display: none;
 }
->>>>>>> 20140124-child
 /*-----------------------------
 BASE
 ------------------------------*/
@@ -60,12 +57,7 @@ img {
 	height: auto;
 	max-width: 100%!important;
 }
-<<<<<<< HEAD
-
-#gazou img{
-=======
 #gazou img {
->>>>>>> 20140124-child
 	height: auto;
 	max-width: 100%!important;
 }
@@ -395,10 +387,6 @@ SIDE
 	color: #333;
 	text-decoration: none;
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> 20140124-child
 #container #wrap #wrap-in #side #ad1 div ul li .textwidget a img {
 	padding: 5px;
 }
@@ -591,12 +579,6 @@ div.affix {
 	font-size: 16px;
 	font-weight: bold;
 	margin-bottom: 10px;
-<<<<<<< HEAD
-	border-left-width: 1px;
-	border-left-style: dotted;
-	border-left-color: #666;
-=======
->>>>>>> 20140124-child
 	padding-top: 5px;
 	padding-right: 10px;
 	padding-bottom: 5px;
@@ -693,10 +675,6 @@ textarea {
 	padding: 0px;
 }
 .blog_info.contentsbox .clearfix {
-<<<<<<< HEAD
-
-=======
->>>>>>> 20140124-child
 	margin: 0px;
 	padding: 0px;
 }
@@ -1029,10 +1007,6 @@ a {
 	padding-bottom: 0px;
 	padding-left: 0px;
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> 20140124-child
 }
 /*-----------------------------------
 Googleぱんくず
@@ -1093,10 +1067,6 @@ div#breadcrumb div {
 #wp-calendar tbody tr #today {
 	background-color: #CCC;
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> 20140124-child
 /*---------------------------------
 
 PREV NEXT
@@ -1105,10 +1075,6 @@ PREV NEXT
 	font-weight: bold;
 	font-size: 15px;
 	line-height: 27px;
-<<<<<<< HEAD
-
-=======
->>>>>>> 20140124-child
 	float: left;
 	width: 50px;
 }
@@ -1117,10 +1083,6 @@ PREV NEXT
 	padding-left: 55px;
 	line-height: 27px;
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> 20140124-child
 /*-----------------------------------
 サイドの新着
 ------------------------------------*/
@@ -1192,10 +1154,6 @@ PREV NEXT
 	color: #900;
 	text-decoration: underline;
 }
-<<<<<<< HEAD
-
-
-=======
 /*-----------------------------------
 20131215追記
 ------------------------------------*/
@@ -1252,7 +1210,6 @@ page itiran
 #topnews div dl dd .datebox a {
 	color: #999;
 }
->>>>>>> 20140124-child
 /*-----------------------------------
 オリジナルコンテンツ
 ------------------------------------*/
