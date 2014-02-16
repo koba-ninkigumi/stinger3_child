@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8" />
 <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
-
 <?php if(is_category()): ?>
 <?php elseif(is_archive()): ?>
 <meta name="robots" content="noindex">
@@ -39,23 +38,14 @@ endif;
 <link rel="shortcut icon" href="http://ninkigumi.github.io/family1st_favicon.ico" />
 
 <!-- css切り替え -->
-<?php 
-if(strpos($_SERVER['HTTP_USER_AGENT'],'ipod')!==false ||
-strpos($_SERVER['HTTP_USER_AGENT'],'iPhone')!==false ||
-strpos($_SERVER['HTTP_USER_AGENT'],'Windows Phone')!==false ||
-strpos($_SERVER['HTTP_USER_AGENT'],'Android')!==false){
-?>
+<?php if(is_mobile()) { ?>
 <link rel="apple-touch-icon-precomposed" href="<?php if (defined('THEMECDN')) { echo THEMECDN; } else { echo get_template_directory_uri(); } ?>/images/apple-touch-icon-precomposed.png" />
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <link rel="stylesheet" href="<?php if (defined('THEMECDN')) { echo THEMECDN; } else { echo get_template_directory_uri(); } ?>/smart.css" type="text/css" media="all" />
-<?php 
-}else{
-?>
+<?php } else { ?>
 <meta name="viewport" content="width=1024, maximum-scale=1, user-scalable=yes">
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="all" />
-<?php
-}
-?>
+<?php } ?>
 <?php wp_head(); ?>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -74,7 +64,7 @@ strpos($_SERVER['HTTP_USER_AGENT'],'Android')!==false){
     var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(po, s);
   })();
 </script>
-<!--OGP開始-->
+<!-- OGP開始 -->
 <meta property="fb:admins" content="1294608307" />
 <meta property="og:locale" content="ja_JP">
 <meta property="og:type" content="blog">
@@ -116,12 +106,7 @@ if (has_post_thumbnail()){//アイキャッチがある場合
 <meta itemprop="name" content="理想の家族形成について話そう - 理想の家族形成を支援する Family 1st">
 <meta itemprop="description" content="あなたもこのページを共有することで理想の家族形成に関心があることをさりげなくアピールしてみませんか？">
 <meta itemprop="image" content="http://ninkigumi.github.io/family1stlogo1920.png">
-<?php
-if(strpos($_SERVER['HTTP_USER_AGENT'],'ipod')!==false ||
-strpos($_SERVER['HTTP_USER_AGENT'],'iPhone')!==false ||
-strpos($_SERVER['HTTP_USER_AGENT'],'Windows Phone')!==false ||
-strpos($_SERVER['HTTP_USER_AGENT'],'Android')!==false){
-?>
+<?php if(is_mobile()) { ?>
 <!--アコーディオン-->
 <div class="pcnone">
   <div id="s-navi">
@@ -188,12 +173,7 @@ strpos($_SERVER['HTTP_USER_AGENT'],'Android')!==false){
 </div>
 <!-- /#gazou -->
 <div class="clear"></div>
-<?php 
-if(strpos($_SERVER['HTTP_USER_AGENT'],'ipod')!==false ||
-strpos($_SERVER['HTTP_USER_AGENT'],'iPhone')!==false ||
-strpos($_SERVER['HTTP_USER_AGENT'],'Windows Phone')!==false ||
-strpos($_SERVER['HTTP_USER_AGENT'],'Android')!==false){
-?>
+<?php if(is_mobile()) { ?>
 <?php 
 }else{
 ?>

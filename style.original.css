@@ -1,12 +1,16 @@
 /*---------------------------------------------------------
+<<<<<<< HEAD
 Theme Name: stinger3ver20131023
+=======
+Theme Name: stinger3ver20140124
+>>>>>>> 20140124-child
 Theme URI: http://stinger3.com
 Description: stinger3
 Author: enji
 Author URI: http://stinger3.com
 License:
 License URI:
-Version: 20131023
+Version: 20140124
 ---------------------------------------------------------*/
 @charset "UTF-8";
 /*-----------------------------
@@ -197,7 +201,7 @@ img.float-right {
 各コンテンツの最大サイズを制限
 -----------------------------*/
 
-.kizi img, .kizi .wp-caption,textarea {
+.kizi img, .kizi .wp-caption, textarea {
 	margin-bottom: 20px;
 	height: auto;
 	max-width: 100%!important;
@@ -1270,4 +1274,16 @@ PREV NEXT
 	font-size: 15px;
 	padding-left: 55px;
 	line-height: 27px;
+}
+
+/*---------------------------------
+page itiran
+--------------------------------*/
+.datebox {
+	font-size: 12px;
+	margin: 0px;
+	color: #999;
+}
+#topnews div dl dd .datebox a {
+	color: #999;
 }

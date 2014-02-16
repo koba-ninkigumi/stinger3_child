@@ -14,12 +14,11 @@
 理想の家族形成に邁進するライフスタイルを提唱し、理想の家族形成を支援する Family 1st を始動する。</div>
 </li></ul>
 </div>
-
   <div class="sidead">
-    <?php if ( function_exists('wp_is_mobile') && wp_is_mobile() ) :?>
-    <?php else: ?>
-    <?php get_template_part('ad');?>
-    <?php endif; ?>
+<?php if(is_mobile()) { ?>
+<?php } else { ?>
+<?php get_template_part('ad');?>
+<?php } ?>
   </div>
   <?php get_search_form(); ?>
   <div class="kizi02"> 

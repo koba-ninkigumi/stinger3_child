@@ -4,6 +4,6 @@
       <?php _e('', 'kubrick'); ?>
     </label>
     <input type="text" value="<?php the_search_query(); ?>"  name="s" id="s" />
-    <input type="image" src="<?php if (defined('THEMECDN')) { echo THEMECDN; } else { echo get_template_directory_uri(); } ?>/images/btn2.gif" alt="検索" id="searchsubmit">
+    <input type="image" src="<?php if (defined('THEMECDN')) { echo THEMECDN; } else { echo get_template_directory_uri(); } ?>/images/btn2.gif" alt="検索" id="searchsubmit"  value="<?php _e('Search', 'kubrick'); ?>" />
   </form>
 </div>
