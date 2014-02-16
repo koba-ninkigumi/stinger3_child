@@ -2,7 +2,7 @@
 
 define('HEADER_IMAGE', 'http://ninkigumi.github.io/family1steyecatch.gif');
 define('THEMECDN', 'http://koba-ninkigumi.github.io/stinger3_child');
-define('NOIMAGE', '/images/family1stlogo150.gif');
+define('NOIMAGE', '/images/family1stlogo02.svg');
 
 add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form' ) );
 
