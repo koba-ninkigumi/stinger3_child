@@ -1,7 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html <?php language_attributes(); ?>>
-<head profile="http://gmpg.org/xfn/11">
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/Article" lang="ja" prefix="og: http://ogp.me/ns# fb: http://www.facebook.com/2008/fbml">
+<head>
+<meta charset="UTF-8" />
 <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 <?php if(is_category()): ?>
 <?php elseif(is_archive()): ?>
@@ -35,21 +35,77 @@ endif;
 </title>
 <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/rogo.ico" />
+<link rel="shortcut icon" href="http://ninkigumi.github.io/family1st_favicon.ico" />
 
 <!---css切り替え--->
 <?php if(is_mobile()) { ?>
-<link rel="apple-touch-icon-precomposed" href="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon-precomposed.png" />
+<link rel="apple-touch-icon-precomposed" href="<?php if (defined('THEMECDN')) { echo THEMECDN; } else { echo get_template_directory_uri(); } ?>/images/apple-touch-icon-precomposed.png" />
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/smart.css" type="text/css" media="all" />
+<link rel="stylesheet" href="<?php if (defined('THEMECDN')) { echo THEMECDN; } else { echo get_template_directory_uri(); } ?>/smart.css" type="text/css" media="all" />
 <?php } else { ?>
 <meta name="viewport" content="width=1024, maximum-scale=1, user-scalable=yes">
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="all" />
 <?php } ?>
 <?php wp_head(); ?>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46259108-1', 'family1.st');
+  ga('send', 'pageview');
+
+</script>
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement("script"); po.type = "text/javascript"; po.async = true;
+    po.src = "https://apis.google.com/js/plusone.js?publisherid=106313192506816468335";
+    var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<!--OGP開始-->
+<meta property="fb:admins" content="1294608307" />
+<meta property="og:locale" content="ja_JP">
+<meta property="og:type" content="blog">
+<?php
+if (is_single()){// 投稿記事
+     if(have_posts()): while(have_posts()): the_post();
+          echo '<meta property="og:description" content="'.mb_substr(get_the_excerpt(), 0, 100).'">';echo "\n";//抜粋から
+     endwhile; endif;
+     echo '<meta property="og:title" content="理想の家族形成について話そう - 理想の家族形成を支援する Family 1st">';echo "\n";//投稿記事タイトル
+     echo '<meta property="og:url" content="'; the_permalink(); echo '">';echo "\n";//投稿記事パーマリンク
+} else {//投稿記事以外（ホーム、カテゴリーなど）
+     echo '<meta property="og:description" content="あなたもこのページを共有することで理想の家族形成に関心があることをさりげなくアピールしてみませんか？">';echo "\n";//「一般設定」で入力したブログの説明文
+     echo '<meta property="og:title" content="理想の家族形成について話そう - 理想の家族形成を支援する Family 1st">';echo "\n";//「一般設定」で入力したブログのタイトル
+     echo '<meta property="og:url" content="'; bloginfo('url'); echo '">';echo "\n";//「一般設定」で入力したブログのURL
+}
+?>
+<meta property="og:site_name" content="<?php bloginfo('name'); ?>">
+<?php
+$str = $post->post_content;
+$searchPattern = '/<img.*?src=(["\'])(.+?)\1.*?>/i';//投稿記事に画像があるか調べる
+if (is_single() or is_page()){//投稿記事か固定ページの場合
+if (has_post_thumbnail()){//アイキャッチがある場合
+     $image_id = get_post_thumbnail_id();
+     $image = wp_get_attachment_image_src( $image_id, 'full');
+     echo '<meta property="og:image" content="'.$image[0].'">';echo "\n";
+} else if ( preg_match( $searchPattern, $str, $imgurl ) && !is_archive()) {//アイキャッチは無いが画像がある場合
+     echo '<meta property="og:image" content="'.$imgurl[2].'">';echo "\n";
+} else {//画像が1つも無い場合
+     echo '<meta property="og:image" content="http://ninkigumi.github.io/family1stlogo1920.png">';echo "\n";
+}
+} else {//投稿記事や固定ページ以外の場合（ホーム、カテゴリーなど）
+     echo '<meta property="og:image" content="http://ninkigumi.github.io/family1stlogo1920.png">';echo "\n";
+}
+?>
+<!--OGP完了-->
 </head>
 
 <body <?php body_class(); ?>>
+<meta itemprop="name" content="理想の家族形成について話そう - 理想の家族形成を支援する Family 1st">
+<meta itemprop="description" content="あなたもこのページを共有することで理想の家族形成に関心があることをさりげなくアピールしてみませんか？">
+<meta itemprop="image" content="http://ninkigumi.github.io/family1stlogo1920.png">
 <?php if(is_mobile()) { ?>
 <!--アコーディオン-->
 <div class="pcnone">

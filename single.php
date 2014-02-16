@@ -84,7 +84,7 @@ while ($st_query -> have_posts()) : $st_query -> the_post(); ?>
               <?php if ( has_post_thumbnail() ): // サムネイルを持っているときの処理 ?>
               <?php echo get_the_post_thumbnail($post->ID, 'thumb110'); ?>
               <?php else: // サムネイルを持っていないときの処理 ?>
-              <img src="<?php echo get_template_directory_uri(); ?>/images/no-img.png" alt="no image" title="no image" width="110px" />
+              <img src="<?php if (defined('THEMECDN')) { echo THEMECDN; } else { echo get_template_directory_uri(); } ?><?php if (defined('NOIMAGE')) { echo NOIMAGE; } else { echo '/images/no-img.png'; } ?>" alt="no image" title="no image" width="100" height="100" />
               <?php endif; ?>
               </a> </dt>
             <dd>

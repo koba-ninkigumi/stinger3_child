@@ -21,7 +21,7 @@
       <?php bloginfo('description'); ?>
       </a></h4>
 <!--著作権リンク-->
-     <p class="stinger"><a href="http://stinger3.com">WordPress-Theme STINGER3</a></p>
+     <p class="stinger"><a href="http://stinger3.com" rel="nofollow">WordPress-Theme STINGER3</a></p>
     <p class="copy">Copyright&copy;
       <?php bloginfo('name');?>
       ,
@@ -37,11 +37,11 @@
 <!-- ページトップへ戻る　終わり --> 
 <!---js切り替え--->
 <?php if(is_mobile()) { ?>
-<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/smartbase.js"></script>
+<script type="text/javascript" src="<?php if (defined('THEMECDN')) { echo THEMECDN; } else { echo get_template_directory_uri(); } ?>/smartbase.js"></script>
 <?php 
 }else{
 ?>
-<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/base.js"></script>
+<script type="text/javascript" src="<?php if (defined('THEMECDN')) { echo THEMECDN; } else { echo get_template_directory_uri(); } ?>/base.js"></script>
 <?php
 }
 ?>
