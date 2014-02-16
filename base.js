@@ -199,21 +199,12 @@ new function(){
 
 
 
-<<<<<<< HEAD
-$(function() {
-    var pageTop = $('#page-top');
-    pageTop.hide();
-    //スクロールが400に達したら表示
-    $(window).scroll(function () {
-        if($(this).scrollTop() > 400) {
-=======
 jQuery(function() {
     var pageTop = jQuery('#page-top');
     pageTop.hide();
     //スクロールが400に達したら表示
     jQuery(window).scroll(function () {
         if(jQuery(this).scrollTop() > 400) {
->>>>>>> 20140124-child
             pageTop.fadeIn();
         } else {
             pageTop.fadeOut();
@@ -221,11 +212,7 @@ jQuery(function() {
     });
     //スクロールしてトップ
         pageTop.click(function () {
-<<<<<<< HEAD
-        $('body,html').animate({
-=======
         jQuery('body,html').animate({
->>>>>>> 20140124-child
             scrollTop: 0
         }, 800);
         return false;
